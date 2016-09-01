@@ -8,7 +8,7 @@ public class Solution {
         }
         List<Integer> list = new ArrayList<>();
         
-        helper(k, n, result, list, 0, 1);
+        helper(k, n, result, list, 1);
         return result;
     }
     
