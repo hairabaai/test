@@ -22,7 +22,7 @@ public class Solution {
                     break;
                 }
                 
-                list.add(nums[i]);
+                list.add(i);
                 helper(k-1, n-i, result, list, i+1);
                 list.remove(list.size()-1);
             }
