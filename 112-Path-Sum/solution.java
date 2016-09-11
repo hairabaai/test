@@ -20,8 +20,8 @@ public class Solution {
             }
         }
 
-        boolean left = helper(root.left, sum-root.val);
-        boolean right = helper(root.right, sum-root.val);
+        boolean left = hasPathSum(root.left, sum-root.val);
+        boolean right = hasPathSum(root.right, sum-root.val);
         return left || right; 
     }
 }
