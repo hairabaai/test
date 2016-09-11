@@ -9,13 +9,6 @@
  */
 public class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {
-        if(root==null){
-            return false;
-        }
-        return helper(root, sum);
-    }
-    
-    private boolean helper(TreeNode root, int sum){
         if (root == null) {
             return false;
         }
@@ -29,11 +22,6 @@ public class Solution {
 
         boolean left = helper(root.left, sum-root.val);
         boolean right = helper(root.right, sum-root.val);
-        return left || right;
+        return left || right; 
     }
-    
-    
-    
-    
-
 }
