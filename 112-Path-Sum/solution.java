@@ -16,6 +16,9 @@ public class Solution {
     }
     
     private boolean helper(TreeNode root, int sum){
+        if (root == null) {
+            return false;
+        }
         if(root.left==null && root.right == null){
             if(sum == root.val){
                 return true;
