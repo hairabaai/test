@@ -16,12 +16,16 @@ public class Solution {
     }
     
     private boolean helper(TreeNode root, int sum){
-        if(root.left==null && root.right == null && sum==root.val){
-            return true;
+        if(root.left==null && root.right == null){
+            if(sum == root.val){
+                return true;
+            }else{
+                return false;
+            }
         }
-        boolean left, right = false;
-        left = helper(root.left, sum-root.val);
-        right = helper(root.right, sum-root.val);
+
+        boolean left = helper(root.left, sum-root.val);
+        boolean right = helper(root.right, sum-root.val);
         return left || right;
     }
     
