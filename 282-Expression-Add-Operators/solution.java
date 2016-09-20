@@ -19,7 +19,7 @@ public class Solution {
             return;
         }
         
-        for(int i = pos; i<num.length; i++){
+        for(int i = pos; i<num.length(); i++){
             long curr = Long.parseLong(num.substring(pos, i+1));
             if(pos == 0){
                 addOperators(num, target, path+curr, result, i+1, eval+curr, curr);
