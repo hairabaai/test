@@ -20,13 +20,17 @@ public class Solution {
         }
         
         for(int i = pos; i<num.length(); i++){
+            if(i != pos && num.charAt(pos) == '0'){
+                break;
+            }
+            
             long curr = Long.parseLong(num.substring(pos, i+1));
             if(pos == 0){
-                addOperators(num, target, path+curr, result, i+1, eval+curr, curr);
+                helper(num, target, path + curr, result, i+1, eval+curr, curr);
             }else{
-                addOperators(num, target, path + "+" + curr, result, i+1, eval+curr, curr);
-                addOperators(num, target, path + "-" + curr, result, i+1, eval-curr, -curr);
-                addOperators(num, target, path + "*" + curr, result, i+1, eval-lastVal + lastVal*curr, lastVal*curr);
+                helper(num, target, path + "+" + curr, result, i+1, eval+curr, curr);
+                helper(num, target, path + "-" + curr, result, i+1, eval-curr, -curr);
+                helper(num, target, path + "*" + curr, result, i+1, eval-lastVal + lastVal*curr, lastVal*curr);
             }
         }
     }
