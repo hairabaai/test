@@ -25,9 +25,10 @@ public class Solution {
             return false;
         }
         
-        if(left.left.val == right.right.val && left.right.val == right.left.val){
-            return true;
+        if(left.val == right.val){
+            return helper(left.left, right.right) && helper(left.right, right.left);
+        }else{
+            return false;
         }
-        return helper(left.left, left.right) && helper(right.left, right.right);
     }
 }
